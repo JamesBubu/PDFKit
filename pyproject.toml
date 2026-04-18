@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdfkit-convert"
+version = "0.1.0"
+description = "Convert PDFs into editable formats (Word, HTML, Markdown, text, Excel) while preserving layout and typography."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "pdf2docx>=0.5.8",
+    "PyMuPDF>=1.23.0",
+    "pdfplumber>=0.10.0",
+    "openpyxl>=3.1.0",
+    "markdownify>=0.11.6",
+]
+
+[project.scripts]
+pdfkit = "pdfkit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pdfkit*"]
